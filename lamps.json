@@ -1,0 +1,22 @@
+[
+    {
+        "src": "assets/images/lamps/moon-lamp.jpg",
+        "title": "Moon Lamp",
+        "alt": "Wooden night lamp - Moon Lamp (Code: KA 2101)"
+    },
+    {
+        "src": "assets/images/lamps/rustic-lamp.jpg",
+        "title": "Rustic Lamp",
+        "alt": "Wooden night lamp - Rustic Lamp (Code: KA 2122)"
+    },
+    {
+        "src": "assets/images/lamps/geometric-lamp.jpg",
+        "title": "Geometric Lamp",
+        "alt": "Wooden night lamp - Geometric Lamp (Code: KA 2128)"
+    },
+    {
+        "src": "assets/images/lamps/vintage-lamp.jpg",
+        "title": "Vintage Lamp",
+        "alt": "Wooden night lamp - Vintage Lamp (Code: KA 2130)"
+    }
+]

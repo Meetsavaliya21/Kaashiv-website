@@ -1,0 +1,12 @@
+[
+    {
+        "src": "assets/images/sample1.jpg",
+        "title": "Sample Image 1",
+        "alt": "A description of sample image 1"
+    },
+    {
+        "src": "assets/images/sample2.png",
+        "title": "Sample Image 2",
+        "alt": "A description of sample image 2"
+    }
+]
