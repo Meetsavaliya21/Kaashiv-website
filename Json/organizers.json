@@ -2,21 +2,25 @@
     {
         "src": "Images/pen_stand.jpeg",
         "title": "Pen Holder",
-        "alt": "Desk organizer - Pen Holder (Code: KA 3101)"
+        "alt": "Desk organizer - Pen Holder (Code: KA 3101)",
+        "price": 199
     },
     {
         "src": "Images/card_holder.jpeg",
         "title": "Card holder",
-        "alt": "Desk organizer - Card holder (Code: KA 3122)"
+        "alt": "Desk organizer - Card holder (Code: KA 3122)",
+        "price": 249
     },
     {
         "src": "Images/clock.jpeg",
         "title": "Table Clock",
-        "alt": "Desk organizer - Table Clock (Code: KA 3128)"
+        "alt": "Desk organizer - Table Clock (Code: KA 3128)",
+        "price": 279
     },
     {
         "src": "Images/date_card.jpeg",
         "title": "Calendar Stand",
-        "alt": "Desk organizer - Calendar Stand (Code: KA 3130)"
+        "alt": "Desk organizer - Calendar Stand (Code: KA 3130)",
+        "price": 299
     }
 ]

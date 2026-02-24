@@ -1,0 +1,4 @@
+{
+    "line": "{title} x{qty} @ ₹{price} = ₹{subtotal}",
+    "total": "Total: ₹{total}"
+}

@@ -90,184 +90,54 @@
 
     <main class="container mx-auto px-6 -mt-16">
         
+        <!-- search and filters -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
+            <input id="search-input" type="text" placeholder="Search products..." class="bg-slate-800 text-white p-2 rounded w-full md:w-1/2" />
+            <button id="favorites-filter" class="bg-slate-800 text-white px-4 py-2 rounded">Show Favorites</button>
+        </div>
         <!-- Products Summary Section -->
-        <section id="frames" class="mb-20">
-            <div class="flex items-center justify-between mb-8">
-                <div>
-                    <h2 class="text-3xl font-bold">Photo Frames</h2>
-                    <p class="text-slate-400">Capturing memories in wood</p>
+        <section id="frames">
+            <div class="flex items-center justify-between mb-8 cursor-pointer" onclick="toggleCategory('frames')">
+                <div class="flex items-center space-x-2">
+                    <i id="frames-icon" class="fas fa-chevron-down transition-transform"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold inline">Photo Frames</h2>
+                        <p class="text-slate-400">Capturing memories in wood</p>
+                    </div>
                 </div>
+                <span id="frames-count" class="text-sm text-slate-400">0 items</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                        <img data-title="Love Forever" alt="Love Forever" class="object-cover w-full h-full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Love Forever</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 1202</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹299</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Best Father" alt="Best Father" class="object-cover w-full h-full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Best Father</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 1221</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹299</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Anniversary" alt="Anniversary" class="object-cover w-full h-full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Anniversary</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 1228</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹299</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Memories" alt="Memories" class="object-cover w-full h-full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Memories</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 1230</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹299</span>
-                    </div>
-                </div>
-            </div>
+            <div id="frames-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 hidden"></div>
         </section>
 
         <!-- Lamps Section -->
-        <section id="lamps" class="mb-20 pt-20">
-            <div class="flex items-center justify-between mb-8">
-                <div>
-                    <h2 class="text-3xl font-bold">Lamps</h2>
-                    <p class="text-slate-400">Illuminating your space with style</p>
+        <section id="lamps">
+            <div class="flex items-center justify-between mb-8 cursor-pointer" onclick="toggleCategory('lamps')">
+                <div class="flex items-center space-x-2">
+                    <i id="lamps-icon" class="fas fa-chevron-down transition-transform"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold inline">Lamps</h2>
+                        <p class="text-slate-400">Illuminating your space with style</p>
+                    </div>
                 </div>
+                <span id="lamps-count" class="text-sm text-slate-400">0 items</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                        <img data-title="Moon Lamp" alt="Moon Lamp" class="object-cover w-full h-full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Moon Lamp</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 2101</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹499</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Rustic Lamp" alt="Rustic Lamp" class="object-cover w-full h-full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Rustic Lamp</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 2122</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹549</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Geometric Lamp" alt="Geometric Lamp" class="object-cover w-full h-full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Geometric Lamp</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 2128</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹599</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Vintage Lamp" alt="Vintage Lamp" class="object-cover w-full h-full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Vintage Lamp</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 2130</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹549</span>
-                    </div>
-                </div>
-            </div>
+            <div id="lamps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 hidden"></div>
         </section>
 
         <!-- Desk Items Section -->
-        <section id="organizers" class="mb-20 pt-20">
-            <div class="flex items-center justify-between mb-8">
-                <div>
-                    <h2 class="text-3xl font-bold">Desk Items</h2>
-                    <p class="text-slate-400">Organize with elegance</p>
+        <section id="organizers">
+            <div class="flex items-center justify-between mb-8 cursor-pointer" onclick="toggleCategory('organizers')">
+                <div class="flex items-center space-x-2">
+                    <i id="organizers-icon" class="fas fa-chevron-down transition-transform"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold inline">Desk Items</h2>
+                        <p class="text-slate-400">Organize with elegance</p>
+                    </div>
                 </div>
+                <span id="organizers-count" class="text-sm text-slate-400">0 items</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                        <img data-title="Pen Holder" alt="Pen Holder" class="object-cover w-full h/full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Pen Holder</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 3101</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹199</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Memo Tray" alt="Memo Tray" class="object-cover w-full h/full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Memo Tray</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 3122</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹249</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Letter Rack" alt="Letter Rack" class="object-cover w-full h/full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Letter Rack</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 3128</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹279</span>
-                    </div>
-                </div>
-                <div class="product-card p-4 rounded-2xl border border-slate-700">
-                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center">
-                        <img data-title="Calendar Stand" alt="Calendar Stand" class="object-cover w-full h/full" />
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-semibold text-lg">Calendar Stand</h3>
-                            <p class="text-xs text-slate-400 uppercase tracking-tighter">Code: KA 3130</p>
-                        </div>
-                        <span class="accent-orange font-bold text-lg">₹299</span>
-                    </div>
-                </div>
-            </div>
+            <div id="organizers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 hidden"></div>
         </section>
 
         <!-- About Us Section -->
@@ -374,52 +244,288 @@
                             <i class="fas fa-box accent-orange"></i>
                             <span class="text-slate-300">Safe, palletized shipping nationwide</span>
                         </div>
-                        </div>
                     </div>
-                    <form class="space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="text" placeholder="Name" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:border-orange-500 outline-none">
-                            <input type="email" placeholder="Email" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:border-orange-500 outline-none">
-                        </div>
-                        <input type="text" placeholder="Organization / Shop Name" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:border-orange-500 outline-none">
-                        <select class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-400 focus:border-orange-500 outline-none">
-                            <option>Estimated Quantity (e.g. 50-100)</option>
-                            <option>Wholesale Stock</option>
-                            <option>Corporate Gifting</option>
-                            <option>Other Bulk Needs</option>
-                        </select>
-                        <textarea placeholder="Tell us about your requirement..." rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:border-orange-500 outline-none"></textarea>
-                        <button type="submit" class="w-full bg-accent-orange text-white py-3 rounded-lg font-bold hover:bg-orange-600 transition uppercase tracking-widest">Send Inquiry</button>
-                    </form>
+                </div>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="Name" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:border-orange-500 outline-none">
+                        <input type="email" placeholder="Email" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:border-orange-500 outline-none">
+                    </div>
+                    <input type="text" placeholder="Organization / Shop Name" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:border-orange-500 outline-none">
+                    <select class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-slate-400 focus:border-orange-500 outline-none">
+                        <option>Estimated Quantity (e.g. 50-100)</option>
+                        <option>Wholesale Stock</option>
+                        <option>Corporate Gifting</option>
+                        <option>Other Bulk Needs</option>
+                    </select>
+                    <textarea placeholder="Tell us about your requirement..." rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:border-orange-500 outline-none"></textarea>
+                    <button type="submit" class="w-full bg-accent-orange text-white py-3 rounded-lg font-bold hover:bg-orange-600 transition uppercase tracking-widest">Send Inquiry</button>
+                </form>
             </div>
         </section>
 
     </main>
 
+    <!-- cart UI elements -->
+    <button id="cart-btn" class="fixed bottom-6 right-6 bg-accent-orange text-white p-4 rounded-full shadow-lg z-50 flex items-center space-x-2">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="font-bold">0</span>
+    </button>
+    <div id="cart-summary" class="fixed inset-0 bg-black/60 hidden justify-center items-center z-50">
+      <div class="bg-slate-900 p-8 rounded-lg max-w-md w-full">
+        <h3 class="text-2xl font-bold mb-4">Cart Summary</h3>
+        <div id="cart-items-list" class="space-y-2"></div>
+        <p class="font-bold mt-4">Total: ₹<span id="cart-total">0</span></p>
+        <div class="flex flex-col sm:flex-row sm:space-x-4 mt-6">
+            <a id="email-link" class="bg-accent-orange text-white px-4 py-2 rounded mb-2 sm:mb-0">Book via Email</a>
+            <a id="whatsapp-link" class="bg-green-500 text-white px-4 py-2 rounded">Book via WhatsApp</a>
+            <button onclick="closeCart()" class="text-slate-400 mt-2 sm:mt-0">Close</button>
+        </div>
+      </div>
+    </div>
+
     <script>
-        // utility to populate images from a JSON file based on title
-        async function loadSection(sectionId, jsonFile) {
-            try {
-                const resp = await fetch(jsonFile);
-                const items = await resp.json();
-                items.forEach(item => {
-                    const img = document.querySelector(
-                        `#${sectionId} img[data-title="${item.title}"]`
-                    );
-                    if (img) {
-                        img.src = item.src;
-                        img.alt = item.alt || item.title;
-                    }
-                });
-            } catch (e) {
-                console.error('failed to load', jsonFile, e);
-            }
+    const cart = {};
+    let favorites = new Set();
+    let filterFavorites = false;
+    let searchQuery = '';
+
+    let templates = { line: "{title} x{qty} @ ₹{price} = ₹{subtotal}", total: "Total: ₹{total}" };
+
+    async function loadTemplates() {
+        try {
+            const resp = await fetch('Json/message.json');
+            const data = await resp.json();
+            templates = { ...templates, ...data };
+        } catch (e) {
+            console.warn('template load failed', e);
         }
-        // load each catalog section
-        loadSection('frames', 'Json/frames.json');
-        loadSection('lamps', 'Json/lamps.json');
-        loadSection('organizers', 'Json/organizers.json');
-    </script>
+    }
+
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    function loadCart() {
+        try {
+            const data = JSON.parse(localStorage.getItem('cart') || '{}');
+            Object.assign(cart, data);
+        } catch {};
+    }
+
+    function saveFavorites() {
+        localStorage.setItem('favorites', JSON.stringify([...favorites]));
+    }
+    function loadFavorites() {
+        try {
+            const arr = JSON.parse(localStorage.getItem('favorites') || '[]');
+            favorites = new Set(arr);
+        } catch {};
+    }
+
+    function applyFilters() {
+        document.querySelectorAll('.product-card').forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const matchesSearch = !searchQuery || title.includes(searchQuery.toLowerCase());
+            const isFav = card.classList.contains('is-favorite');
+            const show = matchesSearch && (!filterFavorites || isFav);
+            card.style.display = show ? '' : 'none';
+        });
+    }
+
+    function toggleCategory(id) {
+        const grid = document.getElementById(id + '-grid');
+        const icon = document.getElementById(id + '-icon');
+        if (!grid) return;
+        const hidden = grid.classList.contains('hidden');
+        grid.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180', hidden);
+    }
+
+    async function loadCatalog(id, jsonFile) {
+        try {
+            const resp = await fetch(jsonFile);
+            const items = await resp.json();
+            const container = document.getElementById(id + '-grid');
+            const countEl = document.getElementById(id + '-count');
+            container.innerHTML = '';
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'product-card relative p-4 rounded-2xl border border-slate-700';
+                // mark favorite if previously saved
+                if (favorites.has(item.title)) {
+                    card.classList.add('is-favorite');
+                }
+                card.innerHTML = `
+                    <div class="aspect-[10/6.25] bg-slate-800 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+                        <img src="${item.src}" alt="${item.alt||item.title}" class="object-cover w-full h-full" />
+                        <div class="absolute inset-0 flex justify-center items-center opacity-0 hover:opacity-100 transition bg-black/25 space-x-4">
+                            <button class="favorite-btn text-white text-xl"><i class="fas fa-heart ${favorites.has(item.title)?'text-red-500':''}"></i></button>
+                            <button class="addcart-btn text-white text-xl"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold text-lg">${item.title}</h3>
+                            ${extractCode(item.alt)}
+                        </div>
+                        <span class="accent-orange font-bold text-lg">₹${item.price}</span>
+                    </div>
+                `;
+                container.appendChild(card);
+
+                card.querySelector('.favorite-btn').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleFavorite(card);
+                });
+                card.querySelector('.addcart-btn').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    addToCart(item);
+                });
+            });
+            if (countEl) countEl.textContent = items.length + (items.length===1 ? ' item' : ' items');
+            applyFilters();
+        } catch(e) {
+            console.error('failed to load', jsonFile, e);
+        }
+    }
+
+    function extractCode(text) {
+        const match = /Code:[^)]*/.exec(text || '');
+        return match ? `<p class="text-xs text-slate-400 uppercase tracking-tighter">${match[0]}</p>` : '';
+    }
+
+    function toggleFavorite(card) {
+        const title = card.querySelector('h3').textContent;
+        const icon = card.querySelector('.favorite-btn i');
+        const fav = favorites.has(title);
+        if (fav) {
+            favorites.delete(title);
+            card.classList.remove('is-favorite');
+            icon.classList.remove('text-red-500');
+        } else {
+            favorites.add(title);
+            card.classList.add('is-favorite');
+            icon.classList.add('text-red-500');
+        }
+        saveFavorites();
+        applyFilters();
+    }
+
+    function addToCart(item) {
+        const key = item.title;
+        if (!cart[key]) {
+            cart[key] = { price: item.price, quantity: 0 };
+        }
+        cart[key].quantity++;
+        updateCartCount();
+        saveCart();
+    }
+
+    function adjustCartItem(title, delta) {
+        if (!cart[title]) return;
+        cart[title].quantity += delta;
+        if (cart[title].quantity <= 0) {
+            delete cart[title];
+        }
+        updateCartCount();
+    }
+
+    function removeCartItem(title) {
+        delete cart[title];
+        updateCartCount();
+    }
+
+    function updateCartCount() {
+        const count = Object.values(cart).reduce((sum, i) => sum + i.quantity, 0);
+        document.getElementById('cart-count').textContent = count;
+        saveCart();
+    }
+
+    function showCartSummary() {
+        const list = document.getElementById('cart-items-list');
+        list.innerHTML = '';
+        let total = 0;
+        for (const [title,{price,quantity}] of Object.entries(cart)) {
+            const subtotal = price * quantity;
+            total += subtotal;
+            const row = document.createElement('div');
+            row.className = 'flex justify-between items-center';
+            row.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <button class="decrease text-sm px-2">-</button>
+                    <span>${title} x${quantity}</span>
+                    <button class="increase text-sm px-2">+</button>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>₹${subtotal}</span>
+                    <button class="remove text-sm text-red-400">x</button>
+                </div>
+            `;
+            list.appendChild(row);
+
+            row.querySelector('.decrease').addEventListener('click', () => {
+                adjustCartItem(title, -1);
+                showCartSummary();
+            });
+            row.querySelector('.increase').addEventListener('click', () => {
+                adjustCartItem(title, 1);
+                showCartSummary();
+            });
+            row.querySelector('.remove').addEventListener('click', () => {
+                removeCartItem(title);
+                showCartSummary();
+            });
+        }
+        document.getElementById('cart-total').textContent = total;
+        const summaryText = generateSummaryText(total);
+        document.getElementById('email-link').href = `mailto:meetsavaliya869@gmail.com?subject=Order%20Summary&body=${encodeURIComponent(summaryText)}`;
+        document.getElementById('whatsapp-link').href = `https://wa.me/919313886487?text=${encodeURIComponent(summaryText)}`;
+        document.getElementById('cart-summary').classList.remove('hidden');
+    }
+
+    function generateSummaryText(total) {
+        const lines = [];
+        for (const [title,{price,quantity}] of Object.entries(cart)) {
+            const subtotal = price*quantity;
+            let line = templates.line
+                .replace('{title}', title)
+                .replace('{qty}', quantity)
+                .replace('{price}', price)
+                .replace('{subtotal}', subtotal);
+            lines.push(line);
+        }
+        lines.push(templates.total.replace('{total}', total));
+        return lines.join('\n');
+    }
+
+    function closeCart() {
+        document.getElementById('cart-summary').classList.add('hidden');
+    }
+
+    document.getElementById('cart-btn').addEventListener('click', showCartSummary);
+
+    // wire up search and favorites filter
+    document.getElementById('search-input').addEventListener('input', e => {
+        searchQuery = e.target.value;
+        applyFilters();
+    });
+    document.getElementById('favorites-filter').addEventListener('click', () => {
+        filterFavorites = !filterFavorites;
+        document.getElementById('favorites-filter').textContent = filterFavorites ? 'Show All' : 'Show Favorites';
+        applyFilters();
+    });
+
+    // initialize catalogs with persisted state
+    (async function init() {
+        await loadTemplates();
+        loadFavorites();
+        loadCart();
+        updateCartCount();
+        loadCatalog('frames','Json/frames.json');
+        loadCatalog('lamps','Json/lamps.json');
+        loadCatalog('organizers','Json/organizers.json');
+    })();
+</script>
 
     <!-- Footer -->
     <footer id="contact" class="bg-slate-900 pt-20 pb-10 border-t border-slate-800">
@@ -465,11 +571,11 @@
                         </div>
                         <div class="flex items-center space-x-4">
                             <i class="fas fa-phone accent-orange"></i>
-                            <p class="text-slate-400 text-sm">+91 98255 17295</p>
+                            <p class="text-slate-400 text-sm">+91 93138 86487</p>
                         </div>
                         <div class="flex items-center space-x-4">
                             <i class="fas fa-envelope accent-orange"></i>
-                            <p class="text-slate-400 text-sm">sales@kaashivart.com</p>
+                            <p class="text-slate-400 text-sm">meetsavaliya869@gmail.com</p>
                         </div>
                     </div>
                 </div>

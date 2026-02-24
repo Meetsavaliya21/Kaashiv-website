@@ -2,21 +2,25 @@
     {
         "src": "assets/images/lamps/moon-lamp.jpg",
         "title": "Moon Lamp",
-        "alt": "Wooden night lamp - Moon Lamp (Code: KA 2101)"
+        "alt": "Wooden night lamp - Moon Lamp (Code: KA 2101)",
+        "price": 499
     },
     {
         "src": "assets/images/lamps/rustic-lamp.jpg",
         "title": "Rustic Lamp",
-        "alt": "Wooden night lamp - Rustic Lamp (Code: KA 2122)"
+        "alt": "Wooden night lamp - Rustic Lamp (Code: KA 2122)",
+        "price": 549
     },
     {
         "src": "assets/images/lamps/geometric-lamp.jpg",
         "title": "Geometric Lamp",
-        "alt": "Wooden night lamp - Geometric Lamp (Code: KA 2128)"
+        "alt": "Wooden night lamp - Geometric Lamp (Code: KA 2128)",
+        "price": 599
     },
     {
         "src": "assets/images/lamps/vintage-lamp.jpg",
         "title": "Vintage Lamp",
-        "alt": "Wooden night lamp - Vintage Lamp (Code: KA 2130)"
+        "alt": "Wooden night lamp - Vintage Lamp (Code: KA 2130)",
+        "price": 549
     }
 ]

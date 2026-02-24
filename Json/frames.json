@@ -2,21 +2,25 @@
     {
         "src": "Images/love_forever.jpeg",
         "title": "Love Forever",
-        "alt": "Photo frame - Love Forever (Code: KA 1202)"
+        "alt": "Photo frame - Love Forever (Code: KA 1202)",
+        "price": 299
     },
     {
         "src": "assets/images/frames/best-father.jpg",
         "title": "Best Father",
-        "alt": "Photo frame - Best Father (Code: KA 1221)"
+        "alt": "Photo frame - Best Father (Code: KA 1221)",
+        "price": 299
     },
     {
         "src": "assets/images/frames/anniversary.jpg",
         "title": "Anniversary",
-        "alt": "Photo frame - Anniversary (Code: KA 1228)"
+        "alt": "Photo frame - Anniversary (Code: KA 1228)",
+        "price": 299
     },
     {
         "src": "Images/king_queen_frame.jpeg",
         "title": "Memories",
-        "alt": "Photo frame - Memories (Code: KA 1230)"
+        "alt": "Photo frame - Memories (Code: KA 1230)",
+        "price": 299
     }
 ]
